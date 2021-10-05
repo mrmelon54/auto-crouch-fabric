@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "auto-crouch",
+  "version": "${version}",
+  "name": "Auto Crouch",
+  "description": "Automatically crouches when opening a GUI",
+  "authors": [
+    "MrMelon54"
+  ],
+  "contact": {
+    "website": "https://minecraft.onpointcoding.net/mods/autocrouch",
+    "repo": "https://github.com/MrMelon54/auto-crouch-fabric"
+  },
+  "license": "MIT",
+  "icon": "assets/autocrouch/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.onpointcoding.autocrouch.client.AutoCrouchClient"
+    ],
+    "modmenu": [
+      "net.onpointcoding.autocrouch.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "AutoCrouch.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.6",
+    "fabric": "*",
+    "minecraft": "1.17.x"
+  }
+}
