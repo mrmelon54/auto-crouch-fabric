@@ -8,8 +8,8 @@
     "MrMelon54"
   ],
   "contact": {
-    "website": "https://minecraft.onpointcoding.net/mods/autocrouch",
-    "repo": "https://github.com/MrMelon54/auto-crouch-fabric"
+    "homepage": "https://minecraft.onpointcoding.net/mods/autocrouch",
+    "sources": "https://github.com/MrMelon54/auto-crouch-fabric"
   },
   "license": "MIT",
   "icon": "assets/autocrouch/icon.png",
