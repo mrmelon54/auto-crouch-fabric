@@ -33,7 +33,7 @@ public class MinecraftClientMixin {
     @Nullable
     public ClientPlayerEntity player;
 
-    @Inject(method = "openScreen", at = @At("TAIL"))
+    @Inject(method = "setScreen", at = @At("TAIL"))
     private void injectedOpenScreen(Screen screen, CallbackInfo ci) {
         AutoCrouchClient autoCrouch = AutoCrouchClient.getInstance();
         if (screen != null) {
