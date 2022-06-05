@@ -1,16 +1,16 @@
-package net.onpointcoding.autocrouch;
+package xyz.mrmelon54.AutoCrouch;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
+import me.shedaniel.autoconfig.AutoConfig;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.onpointcoding.autocrouch.gui.AutoCrouchSettingsGui;
-import net.onpointcoding.autocrouch.screen.AutoCrouchSettingsScreen;
+import xyz.mrmelon54.AutoCrouch.config.ConfigStructure;
 
 @Environment(EnvType.CLIENT)
 public class ModMenuIntegration implements ModMenuApi {
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
-        return parent -> new AutoCrouchSettingsScreen(new AutoCrouchSettingsGui(), parent);
+        return parent -> AutoConfig.getConfigScreen(ConfigStructure.class, parent).get();
     }
 }

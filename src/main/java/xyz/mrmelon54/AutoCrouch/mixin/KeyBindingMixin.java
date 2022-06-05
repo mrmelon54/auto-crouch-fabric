@@ -1,11 +1,11 @@
-package net.onpointcoding.autocrouch.mixin;
+package xyz.mrmelon54.AutoCrouch.mixin;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
-import net.onpointcoding.autocrouch.duck.KeyBindingDuckProvider;
+import xyz.mrmelon54.AutoCrouch.duck.KeyBindingDuckProvider;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 

@@ -1,0 +1,9 @@
+{
+  "text.autoconfig.auto-crouch.title": "Auto Crouch Config",
+  "text.autoconfig.auto-crouch.category.main-config": "Main",
+  "text.autoconfig.auto-crouch.option.mainConfig.EnableGUIs": "Enable for GUIs",
+  "text.autoconfig.auto-crouch.option.mainConfig.EnableTab": "Enable for tab menu",
+  "text.autoconfig.auto-crouch.option.mainConfig.EnableChat": "Enable for chat",
+  "text.autoconfig.auto-crouch.category.screen-config": "Screens",
+  "text.autoconfig.auto-crouch.category.screen-config.disabled": "Only usable with enable GUIs turned on"
+}

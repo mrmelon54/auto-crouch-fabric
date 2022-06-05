@@ -8,25 +8,26 @@
     "MrMelon54"
   ],
   "contact": {
-    "homepage": "https://minecraft.onpointcoding.net/mods/autocrouch",
-    "sources": "https://github.com/MrMelon54/auto-crouch-fabric"
+    "homepage": "https://minecraft.mrmelon54.xyz/mods/auto-crouch",
+    "sources": "https://github.com/MrMelon54/auto-crouch-fabric",
+    "issues": "https://github.com/MrMelon54/auto-crouch-fabric/issues"
   },
   "license": "MIT",
-  "icon": "assets/autocrouch/icon.png",
+  "icon": "assets/auto-crouch/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
-      "net.onpointcoding.autocrouch.client.AutoCrouchClient"
+      "xyz.mrmelon54.AutoCrouch.client.AutoCrouchClient"
     ],
     "modmenu": [
-      "net.onpointcoding.autocrouch.ModMenuIntegration"
+      "xyz.mrmelon54.AutoCrouch.ModMenuIntegration"
     ]
   },
   "mixins": [
     "AutoCrouch.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.12.8",
+    "fabricloader": ">=0.14.0",
     "fabric": "*",
     "minecraft": "1.18.x"
   }

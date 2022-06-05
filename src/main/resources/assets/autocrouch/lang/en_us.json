@@ -1,9 +1,0 @@
-{
-  "autocrouch.config.title": "Auto Crouch Config",
-  "autocrouch.config.tab.general.title": "General",
-  "autocrouch.config.tab.screens.title": "Screens",
-  "autocrouch.config.tab.general.enable_guis": "Enable for GUIs",
-  "autocrouch.config.tab.general.enable_tab": "Enable for tab menu",
-  "autocrouch.config.tab.general.enable_chat": "Enable for chat",
-  "autocrouch.config.tab.screens.disabled": "Only usable with enable GUIs turned on"
-}
