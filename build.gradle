@@ -25,6 +25,7 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    implementation include("javassist:javassist:${project.javassist_version}")
     implementation include("org.reflections:reflections:${project.reflections_version}")
 
     // Jar-in-jar cloth config

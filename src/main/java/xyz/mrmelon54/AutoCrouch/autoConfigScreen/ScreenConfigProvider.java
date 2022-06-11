@@ -7,7 +7,7 @@ import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import me.shedaniel.clothconfig2.impl.builders.SubCategoryBuilder;
 import net.minecraft.text.Text;
 import xyz.mrmelon54.AutoCrouch.config.ScreenConfig;
-import xyz.mrmelon54.AutoCrouch.utils.Utils;
+import xyz.mrmelon54.AutoCrouch.utils.Deobfuscator;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -20,12 +20,13 @@ public class ScreenConfigProvider implements GuiProvider {
         List<AbstractConfigListEntry> list = new ArrayList<>();
         if (o instanceof ScreenConfig screenConfig) {
             Iterator<String> iterator = screenConfig.EnabledScreens.keySet().stream().sorted().iterator();
-            SubCategoryBuilder abstractConfigListEntries = ConfigEntryBuilder.create().startSubCategory(Text.literal(Utils.InGameScreenPackage)).setExpanded(true);
+            SubCategoryBuilder abstractConfigListEntries = ConfigEntryBuilder.create().startSubCategory(Text.literal("In Game Screens")).setExpanded(true);
             while (iterator.hasNext()) {
                 final String a = iterator.next();
                 Boolean b = screenConfig.EnabledScreens.get(a);
-                Text c = Text.literal(a.replace(Utils.InGameScreenPackage + ".", ""));
-                abstractConfigListEntries.add(ConfigEntryBuilder.create().startBooleanToggle(c, b).setDefaultValue(true).setSaveConsumer(value -> screenConfig.EnabledScreens.put(a, value)).build());
+                String a1 = Deobfuscator.deobfuscateClass(a);
+                Text c = Text.literal(a1.replace("net.minecraft.client.gui.screen.ingame.", ""));
+                abstractConfigListEntries.add(ConfigEntryBuilder.create().startBooleanToggle(c, b).setDefaultValue(true).setSaveConsumer(value -> screenConfig.EnabledScreens.put(a1, value)).build());
             }
             list.add(abstractConfigListEntries.build());
         }
