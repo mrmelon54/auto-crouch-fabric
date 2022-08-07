@@ -8,9 +8,6 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.option.GameOptions;
 import net.minecraft.client.world.ClientWorld;
-import xyz.mrmelon54.AutoCrouch.client.AutoCrouchClient;
-import xyz.mrmelon54.AutoCrouch.config.ConfigStructure;
-import xyz.mrmelon54.AutoCrouch.duck.KeyBindingDuckProvider;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,6 +15,9 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import xyz.mrmelon54.AutoCrouch.client.AutoCrouchClient;
+import xyz.mrmelon54.AutoCrouch.config.ConfigStructure;
+import xyz.mrmelon54.AutoCrouch.duck.KeyBindingDuckProvider;
 
 @Environment(EnvType.CLIENT)
 @Mixin(MinecraftClient.class)
@@ -40,11 +40,12 @@ public class MinecraftClientMixin {
         if (screen != null) {
             if (this.world != null) {
                 ConfigStructure config = autoCrouch.getConfig();
-                if (autoCrouch.getConfig().mainConfig.EnableChat && screen.getClass() == ChatScreen.class)
-                    this.options.sneakKey.setPressed(true);
-                if (this.player != null && this.player.isClimbing() && config.mainConfig.EnableGUIs &&
-                        config.screenConfig.EnabledScreens.getOrDefault(screen.getClass().getName(), false))
-                    this.options.sneakKey.setPressed(true);
+                if (this.player != null && this.player.isClimbing() && !this.player.getAbilities().flying) {
+                    if (autoCrouch.getConfig().mainConfig.EnableChat && screen.getClass() == ChatScreen.class)
+                        this.options.sneakKey.setPressed(true);
+                    if (config.mainConfig.EnableGUIs && config.screenConfig.EnabledScreens.getOrDefault(screen.getClass().getName(), false))
+                        this.options.sneakKey.setPressed(true);
+                }
             }
         } else {
             if (this.options.sneakKey instanceof KeyBindingDuckProvider duckProvider)
